@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEase | Checkout</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="index.html">ShopEase</a>
+    <nav>
+      <a href="index.html">Products</a>
+      <a href="cart.html">Cart <span id="cartCount" class="badge">0</span></a>
+      <a href="orders.html">Orders</a>
+      <span id="userArea"></span>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="checkout-grid">
+      <section class="form-card">
+        <p class="eyebrow">CHECKOUT</p>
+        <h2>Delivery Details</h2>
+        <form id="checkoutForm">
+          <label>Delivery Address</label>
+          <textarea id="address" rows="6" required placeholder="House no., street, city, state, PIN"></textarea>
+          <button class="btn full" type="submit">Place Order</button>
+          <p id="message" class="message"></p>
+        </form>
+      </section>
+
+      <section class="summary-card">
+        <h2>Order Summary</h2>
+        <div id="summary"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

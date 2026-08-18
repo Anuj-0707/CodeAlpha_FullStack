@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEase | Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="index.html">ShopEase</a>
+    <nav>
+      <a href="index.html">Products</a>
+      <a href="cart.html">Cart <span id="cartCount" class="badge">0</span></a>
+      <a href="orders.html">Orders</a>
+      <span id="userArea"></span>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">SMART SHOPPING</p>
+      <h1>Everything you need, in one place.</h1>
+      <p>Discover electronics, fashion and everyday accessories at simple prices.</p>
+      <a class="btn" href="#products">Shop Now</a>
+    </div>
+  </section>
+
+  <main class="container" id="products">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">OUR COLLECTION</p>
+        <h2>Featured Products</h2>
+      </div>
+      <input id="searchInput" class="search" type="search" placeholder="Search products...">
+    </div>
+    <div id="productGrid" class="product-grid"></div>
+  </main>
+
+  <footer>© 2026 ShopEase. Built with HTML, CSS, JavaScript and Express.</footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>
