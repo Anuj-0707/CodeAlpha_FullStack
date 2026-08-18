@@ -1,0 +1,2 @@
+const r=require("express").Router(),a=require("../middleware/authMiddleware"),c=require("../controllers/postController");
+r.get("/feed",a,c.getFeed);r.post("/",a,c.createPost);r.post("/:id/like",a,c.toggleLike);r.post("/:id/comments",a,c.addComment);module.exports=r;

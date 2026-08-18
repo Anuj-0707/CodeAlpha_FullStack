@@ -1,0 +1,12 @@
+const express=require("express"),cors=require("cors"),path=require("path"),dotenv=require("dotenv");
+dotenv.config();
+const auth=require("./routes/authRoutes"),posts=require("./routes/postRoutes"),users=require("./routes/userRoutes");
+const app=express(),PORT=process.env.PORT||3001;
+app.use(cors());app.use(express.json());app.use(express.urlencoded({extended:true}));
+app.use(express.static(path.join(__dirname,"../frontend")));
+app.use("/api/auth",auth);app.use("/api/posts",posts);app.use("/api/users",users);
+app.get("/api/health",(req,res)=>res.json({success:true,message:"SocialSphere API is running"}));
+app.get("/",(req,res)=>res.sendFile(path.join(__dirname,"../frontend/index.html")));
+app.use((req,res)=>res.status(404).json({success:false,message:"Route not found"}));
+app.use((err,req,res,next)=>{console.error(err);res.status(500).json({success:false,message:"Internal server error"})});
+app.listen(PORT,()=>console.log(`SocialSphere running at http://localhost:${PORT}`));

@@ -1,0 +1,2 @@
+const r=require("express").Router(),a=require("../middleware/authMiddleware"),c=require("../controllers/userController");
+r.get("/",a,c.getUsers);r.get("/:id",a,c.getProfile);r.post("/:id/follow",a,c.toggleFollow);r.put("/profile/me",a,c.updateProfile);module.exports=r;
